@@ -1,0 +1,147 @@
+## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+
+##---------- Keybindings for herbstluftwm ----------##
+
+# Terminal (alacritty)
+super + Return
+	alacritty
+
+# Terminal (floating)
+super + shift + Return
+	alacritty -f
+
+# Terminal (fullscreen)
+super + t
+	alacritty -s	
+
+##---------- Rofi Launcher & Menus ----------##
+
+# Rofi App Launcher
+alt + F1
+	sh ~/.config/herbstluftwm/rofi/bin/launcher
+
+# Rofi Network Menu
+super + n
+	nmd
+
+# Rofi Themes Menu
+ctrl + alt + t
+	sh ~/.config/herbstluftwm/rofi/bin/themes
+
+# Rofi Menus/Applets
+super + {w,m,x,r,s,i}
+	sh ~/.config/herbstluftwm/rofi/bin/{windows,mpd,powermenu,asroot,screenshot,network}
+
+##---------- Applications ----------##
+
+# Launch Apps
+super + shift + {f,w,e,l}
+	{thunar,brave,geany,libreoffice}
+
+# Terminal Apps
+ctrl + alt + {v,n,r,h,b}
+	alacritty --config-file ~/.config/herbstluftwm/alacritty/alacritty.yml -e {vim,nvim,ranger,htop,bashtop}
+
+# Color Picker
+super + p
+	color-gpick
+
+# Lockscreen
+ctrl + alt + l
+    bsplock
+
+##---------- System Keys ----------##
+
+# Take a screenshot
+Print
+	takeshot --now
+	
+# Take screenshot in 5 second
+alt + Print	
+	takeshot --in5
+
+# Take screenshot in 10 second
+shift + Print	
+	takeshot --in10
+
+# Take screenshot of active window
+ctrl + Print
+	takeshot --win
+
+# Take screenshot of area
+super + ctrl + Print
+	takeshot --area
+
+# Brighness control
+XF86MonBrightness{Up,Down}
+	brightness{ --inc, --dec}
+	
+# Volume control
+XF86Audio{RaiseVolume,LowerVolume}
+	volume{ --inc, --dec}
+
+XF86AudioMute
+	volume --toggle
+	
+# Music control
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
+	
+	
+#################################################################
+#################################################################
+##################   DESKTOP SPECIFIC    ########################
+#################################################################
+#################################################################
+
+#################################################################
+# CTRL + ALT KEYS
+#################################################################
+
+#Picom Toggle
+ctrl + alt + o
+    ~/.config/herbstluftwm/scripts/picom-toggle.sh
+
+#################################################################
+# SUPER + KEYS
+#################################################################
+
+# if you want to assign applications to specific tags or workspaces
+# add a command behind the application to focus on that workspace if required
+# index 0 corresponds to tag or workspace 1
+# index 1 corresponds to tag or workspace	2
+# example
+
+# Vivaldi
+#super + F1
+#	vivaldi-stable & herbstclient use_index 0
+
+#################################################################
+# HLWM Terminate Keybindings
+#################################################################
+
+#close window/application
+super + q
+    herbstclient close
+
+#close window/application
+super + shift + q
+    herbstclient close
+
+#realod herbstluftwm
+super + shift +r
+    herbstclient reload
+
+#Xkill
+#super + shift + x
+#    herbstclient quit
+
+
+
+
+#################################################################
+#################################################################
+##################   AZERTY/QWERTY/ ... KEYBOARD#################
+#################################################################
+#################################################################

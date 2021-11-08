@@ -1,0 +1,211 @@
+#################################################################
+# KEYBOARD BINDINGS FOR QTILE
+#################################################################
+
+##---------- Keybindings for qtile ----------##
+
+# Terminal (alacritty)
+super + Return
+	alacritty
+
+# Terminal (floating)
+super + shift + Return
+	alacritty -f
+
+# Terminal (fullscreen)
+super + t
+	alacritty -s	
+
+##---------- Rofi Launcher & Menus ----------##
+
+# Rofi App Launcher
+alt + F1
+	sh ~/.config/qtile/rofi/bin/launcher
+
+# Rofi Network Menu
+super + n
+	nmd
+
+# Rofi Themes Menu
+ctrl + alt + t
+	sh ~/.config/qtile/rofi/bin/themes
+
+# Rofi Menus/Applets
+super + {w,x,r,s,i}
+	sh ~/.config/qtile/rofi/bin/{windows,powermenu,asroot,screenshot,network}
+
+##---------- Applications ----------##
+
+# Launch Apps
+super + shift + {f,w,e,l}
+	{thunar,brave,geany,libreoffice}
+
+# Terminal Apps
+ctrl + alt + {v,n,r,h,b}
+	alacritty --config-file ~/.config/qtile/alacritty/alacritty.yml -e {vim,nvim,ranger,htop,bashtop}
+
+# Color Picker
+super + p
+	color-gpick
+
+# Lockscreen
+#ctrl + alt + l
+#    bsplock
+
+##---------- System Keys ----------##
+
+# Take a screenshot
+Print
+	takeshot --now
+	
+# Take screenshot in 5 second
+alt + Print	
+	takeshot --in5
+
+# Take screenshot in 10 second
+shift + Print	
+	takeshot --in10
+
+# Take screenshot of active window
+ctrl + Print
+	takeshot --win
+
+# Take screenshot of area
+super + ctrl + Print
+	takeshot --area
+
+# Brighness control
+XF86MonBrightness{Up,Down}
+	brightness{ --inc, --dec}
+	
+# Volume control
+XF86Audio{RaiseVolume,LowerVolume}
+	volume{ --inc, --dec}
+
+XF86AudioMute
+	volume --toggle
+	
+# Music control
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
+	
+#Brightness up
+XF86MonBrightnessUp
+    xbacklight -inc 10
+
+#Brightness down
+XF86MonBrightnessDown
+    xbacklight -dec 10
+
+
+#################################################################
+#################################################################
+##################   DESKTOP SPECIFIC    ########################
+#################################################################
+#################################################################
+
+#################################################################
+# CTRL + ALT KEYS
+#################################################################
+
+#Picom Toggle
+ctrl + alt + o
+    ~/.config/qtile/scripts/picom-toggle.sh
+
+#################################################################
+# SUPER + KEYS
+#################################################################
+
+#Toggle fullscreen of window
+#super + f
+#    qtile-cmd -o window -f toggle_fullscreen
+
+# normalize layout (undo size changes)
+#super + n
+#    qtile-cmd -o layout -f normalize
+
+#kill
+#super + q
+#    qtile-cmd -o window -f kill
+
+# Foucs WINDOW (Navigate)
+#super + {Left,Down,Up,Right}
+#    qtile-cmd -o layout -f {left,down,up,right}
+
+# Foucs WINDOW (Navigate)
+#super + {h,j,k,l}
+#    qtile-cmd -o layout -f {left,down,up,right}
+
+#################################################################
+# SUPER KEYS
+#################################################################
+
+#Focus selected desktop
+#super + Tab
+#    qtile-cmd -o screen -f next_group
+
+# set the window state
+#super + space
+#    qtile-cmd -o cmd -f next_layout
+
+
+#################################################################
+# SUPER + SHIFT KEYS
+#################################################################
+
+#kill
+#super + shift + q
+#    qtile-cmd -o window -f kill
+
+#Quit Qtile
+#super + shift + x
+#    qtile-cmd -o cmd -f shutdown
+
+# FLIP LAYOUT FOR MONADTALL/MONADWIDE
+#super + shift + f
+#    qtile-cmd -o layout -f flip
+
+# MOVE WINDOWS UP OR DOWN BSP LAYOUT
+
+#super + shift + {h,j,k,l}
+#    qtile-cmd -o layout -f {shuffle_left,shuffle_down,shuffle_up,shuffle_right}
+
+# MOVE WINDOWS UP OR DOWN MONADTALL/MONADWIDE LAYOUT
+
+#super + shift + {Up,Down,Left,Right}
+#    qtile-cmd -o layout -f {shuffle_up,shuffle_down,swap_left,swap_right}
+
+# TOGGLE FLOATING LAYOUT
+#super + shift + space
+#    qtile-cmd -o window -f toggle_floating
+
+#Reload Qtile
+#super + shift + r
+#    qtile-cmd -o cmd -f restart
+
+
+#################################################################
+# SUPER + ALT KEYS
+#################################################################
+
+# FLIP LAYOUT FOR BSP
+
+#super + alt + {h,j,k,l}
+#    qtile-cmd -o layout -f {flip_left,flip_down,flip_up,flip_right}
+
+
+##################################
+## The RESIZE KEYS ARE RESERVED ##
+##  ~/.config/qtile/config.py   ##
+##      Lines 191 - 235         ##
+##################################
+## RESIZE UP, DOWN, LEFT, RIGHT ##
+#super + control + l
+#super + control + Right
+#super + control + h
+#super + control + Left
+#super + control + k
+#super + control + Up
+#super + control + j
+#super + control + Down
+##################################
